@@ -8,9 +8,12 @@
     </head>
     <body>
         <form method="POST">
+            {% csrf_token %}
             {{form}}
-            {% comment %} {% csrf_token %}
-
+            <input type="submit" value="submit">
+             
+            
+             {% comment %}
             {% if email_error_empty %}
                 <p>{{email_error_empty}}</p>
             {% endif %}
