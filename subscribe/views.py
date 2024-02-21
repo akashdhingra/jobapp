@@ -1,9 +1,11 @@
 from django.shortcuts import render
+from subscribe.forms import SubscribeForm
 
 from subscribe.models import Subscribe
 
 # Create your views here.
 def subscribe(request):
+    subscribe_form = SubscribeForm()
     email_error_empty=""
     if request.POST:
         first_name = request.POST['firstname']
@@ -16,5 +18,5 @@ def subscribe(request):
         subscribe = Subscribe(first_name = first_name,last_name = last_name,email =email)
         subscribe.save()
 
-    context={"email_error_empty":email_error_empty}
+    context={"form" : subscribe_form , "email_error_empty":email_error_empty}
     return render(request,'subscribe/subscribe.html',context)
