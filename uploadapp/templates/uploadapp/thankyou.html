@@ -3,14 +3,11 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Thank you</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Upload file</title>
+        <link rel="stylesheet" href="">
     </head>
     <body>
-        <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{form.as_p}}
-        <button type="submit">Upload</button>
-        </form>
+        <p> Thank you for uploading the file </p>
     </body>
 </html>
