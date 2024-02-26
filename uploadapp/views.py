@@ -25,7 +25,3 @@ def upload_file(request):
     else:
         form = UploadFileForm()
     return render(request,'uploadapp/add_file.html',{'form':form})
-
-def thank_you(request):
-    context = {}
-    return render(request,'uploadapp/thankyou.html',context)
